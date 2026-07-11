@@ -1,319 +1,285 @@
-%TEX options = shell-escape
-% ^ special comment for svg to load
+% latexmk -xelatex --shell-escape -pvc memoria_tfg.tex
 
-% format
-\documentclass [10pt, a4paper] {extarticle}
-% page margins
-\usepackage [left=0.6in, right=0.7in, top=0.6in, bottom=0.6in] {geometry}
+\documentclass [a4paper] {extarticle} % format
+\usepackage [left=0.6in, right=0.7in, top=0.6in, bottom=0.6in] {geometry} % page margins
 
-% draw lines
-\usepackage {tikz}
-
-% hyperlinks
-\usepackage {hyperref}
-
-% draw lines
-\usepackage {multicol}
-
-% lorem ipsum
-\usepackage {lipsum}
-
-% bullet lists configs
-\usepackage {enumitem}
+\usepackage {tikz}     % draw lines
+\usepackage {hyperref} % hyperlinks
+\usepackage {multicol} % columns
+\usepackage {enumitem} % bullet lists configs
+\usepackage {xcolor}   % colors
+\usepackage[dvipsnames]{xcolor}
 
 % icons
 \usepackage {fontawesome5}
 \usepackage {wasysym}
 \usepackage {simpleicons}
 
-% qr code
-\usepackage {svg}
-
-% no page number
- \thispagestyle{empty}
+\thispagestyle{empty} % no page number
 
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%% NAME %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
 
-% colours
-\definecolor {namelines} {HTML} {333333}
-\definecolor {nametoptxt} {HTML}{792A1}
-\definecolor {namebottomtxt} {HTML} {333333}
-\definecolor {nametoptxt} {HTML} {8076a7}
-
-\newcommand{\sectionlinethickness} {0.5 pt }
+\newcommand{\sectionlinethickness} {0.5pt}
 
 % section size
-\newcommand{\leftcolumwidth} {0.15 }
-\newcommand{\rightcolumwidth}{ 0.84 }
+\newcommand{\leftcolumwidth} {0.15}
+\newcommand{\rightcolumwidth}{0.84}
 
 \newcommand {\sectiontitle}[1] {
-  \vspace*{-10px}
+  \vspace*{-10pt}
   \begin {flushleft}
   \begin {minipage}[c]{\leftcolumwidth\textwidth}
     \begin {flushright}
       \!\MakeUppercase {#1}
-      \hspace* {10px}
+      \hspace* {10pt}
     \end {flushright}
   \end {minipage}
   \begin{minipage}[c]{\rightcolumwidth\textwidth}
     \begin {tikzpicture}[remember picture, overlay,blend mode=multiply]
-      \draw [line width=\sectionlinethickness, namelines] (0,0) -- (15,0);
+      \draw [line width=\sectionlinethickness, black] (0,0) -- (15,0);
     \end {tikzpicture}
   \end{minipage}
   \end {flushleft}
 }
 
+\definecolor{name}{HTML}{76C1C4}
 
 \begin{document}
 
-  %%%%%%% ENCABEÇAMENTO %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% NOME %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
 
-    \begin {flushright}
-    \begin {minipage} [t] {\rightcolumwidth\textwidth}
-      \vspace {0.35\baselineskip}
-      \begin {minipage}[t]{0.45\textwidth}
+\begin {flushright}
+\begin {minipage} [t] {\rightcolumwidth\textwidth}
+\vspace {0.35\baselineskip}
+\begin {minipage}[t]{0.45\textwidth}
 
-        \begin {tikzpicture}
-          \draw [line width=0.5, namelines] (0,1) -- (0,1.5);
-        \end {tikzpicture}
+\begin {tikzpicture}
+\draw [line width=0.5pt, darkgray] (0,1) -- (0,1.5);
+\end {tikzpicture}
 
-        \vspace {0.2cm}
+\vspace {0.2cm}
 
-        \hspace {-0,39cm}
-        {\fontsize {23 pt} {23 pt}{ \color{nametoptxt} \bfseries
-          \!\!\MakeUppercase { iago}
-        }}
+\hspace {-0,39cm}
+{\fontsize {20 pt} {20 pt}{\color{name} \bfseries \!\!\MakeUppercase {\hspace{11pt}iago}}}
 
-        \vspace{0.3cm}
+\vspace{0.3cm}
 
-        {\fontsize {15 pt} {15 pt}{ \color{namebottomtxt}
-          \!\MakeUppercase {Fernández Rego}
-        }}
+{\fontsize {15 pt} {15 pt}{\!\MakeUppercase {Fernández Rego}}}
 
-        \vspace {0.2cm}
+\vspace {0.2cm}
 
-        {\fontsize {15 pt} {15 pt}{ \color{namebottomtxt}
-          \!\MakeUppercase {cientista da computaçom}
-        }}
+{\fontsize {15 pt} {15 pt}{\!\MakeUppercase {cientista da computaçom}}}
 
-        \vspace{0.2cm}
+\vspace{0.2cm}
 
-        \begin {tikzpicture}
-          \draw [line width= 0.5 pt, namelines] (0,1) -- (0,1.5);
-        \end {tikzpicture}
-      \end {minipage}
-      \hfill
-      \vrule
-      \hspace*{5pt}
-      \begin {minipage}[t]{0.375\textwidth}
-        \begin {center}
-        \vspace{5px}
-          \begin {tabular}{cl}
-            \color{gray}\faMapMarker & A Coruña, Galiza
-            \\[3.75pt] \color{gray}\faEnvelope  & \href {mailto:iago.fdez.rego@proton.me} {iago.fdez.rego@proton.me}
-            \\[3.75pt] \color{gray}\faGithub    & \href {https://github.com/yref-boop}{yref-boop}
-            \\[3.75pt] \color{gray}\faLink    & \href {http://rego.gal}{rego.gal}
-            %\faUniversity\faGlobe
-          \end {tabular}
-        \end {center}
+\begin {tikzpicture}
+\draw [line width= 0.5pt, darkgray] (0,1) -- (0,1.5);
+\end {tikzpicture}
+\end {minipage}
+\hfill
+\vrule
+\hspace*{5pt}
+\begin {minipage}[t]{0.375\textwidth}
+\begin {center}
+\vspace{5pt}
+\begin {tabular}{cl}
+\color{gray}\faMapMarker & A Coruña, Galiza
+\\[3.75pt] \color{gray}\faEnvelope  & \href {mailto:iago.fdez.rego@proton.me} {iago.fdez.rego@proton.me}
+\\[3.75pt] \color{gray}\faGithub    & \href {https://github.com/rego-iago}{rego-iago}
+\\[3.75pt] \color{gray}\faLink    & \href {http://rego.gal}{rego.gal}
+%\faUniversity\faGlobe
+\end {tabular}
+\end {center}
 
-      \end {minipage}
+\end {minipage}
 
-    \end {minipage}
-    \end {flushright}
+\end {minipage}
+\end {flushright}
 
 
-  %%%%% SOBRE MIM %%%%%%%
-  \vspace*{-10px}
-  \begin {flushleft}
-  \begin {minipage}[t]{\leftcolumwidth\textwidth}
-    \begin {flushright}
-      \!\MakeUppercase {sobre mim}
-      \hspace* {10px}
-    \end {flushright}
-  \end {minipage}
-  \begin{minipage}[t]{\rightcolumwidth\textwidth}
-    Estudante de Engenharia Informática de vinte e três anos. Gosto de resolver problemas e de entender o funcionamento interno de sistemas complexos ou concetos teóricos.\\
-    Defendo umha tecnologia aberta, plural e ao serviço das pessoas.
-  \end{minipage}
-  \end {flushleft}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%% SOBRE MIM %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
 
-
-  %%%%% FORMAÇOM %%%%%%
-  \sectiontitle {formaçom}
-  \vspace{-15px}
-
+\vspace*{-10pt}
+\begin {flushleft}
+\begin {minipage}[t]{\leftcolumwidth\textwidth}
   \begin {flushright}
-  \begin {minipage} [t] {\rightcolumwidth\textwidth}
-    \begin {minipage} [t] {210pt}
-      \href {https://estudos.udc.es/en/study/start/614G01V01} {\textbf {Grau em Engenharia Informática (inglês)}}\\
-      \textbf {Universidade da Corunha}\\
-      \hspace* {6px} \textcolor{namebottomtxt} {Setembro 2020 - Atualidade} \\ [4px]
-      Materias relevantes: Matemática Discreta, Algoritmos, Teoria da Computaçom, Aprendizagem Automática, Desenvolvemento de Sistemas Inteligentes,  Processamento de Linguagens.
-    \end {minipage}
-    \hfill
-    \begin {minipage} [t] {200pt}
-      \href {https://itg.es/} {\textbf {Desenvolvemento Software (full-stack)}}\\
-      \textbf {Instituto Tecnológico de Galicia}\\
-      \hspace* {6px} \textcolor{namebottomtxt} {Setembro 2023 - Junho 2024} \\ [4px]
-      Trabalho colaborativo no desenvolvemento de umha ferramenta de autenticaçom, empregando JavaScript, Java e Angular
-    \end {minipage}
-  \end {minipage}
+  \!\MakeUppercase {sobre mim}
+  \hspace* {10pt}
   \end {flushright}
+\end {minipage}
+\begin{minipage}[t]{\rightcolumwidth\textwidth}
+  Graduado em Engenharia Informática de vinte e quatro anos. Gosto de resolver problemas e de entender o funcionamento interno de sistemas complexos ou concetos teóricos.\\
+  Defendo umha tecnologia aberta, plural e ao serviço das pessoas.
+\end{minipage}
+\end {flushleft}
 
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%% FORMAÇOM  %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
 
-  %%%%% PROJETOS %%%%%%
+\sectiontitle {formaçom}
+\vspace{-15pt}
 
-  \sectiontitle {projetos}
-  \vspace{-15px}
+\begin {flushright}
+\begin {minipage} [t] {\rightcolumwidth\textwidth}
+  \begin {minipage} [t] {210pt}
+    \href {https://estudos.udc.es/en/study/start/614G01V01} {\textbf {Grau em Engenharia Informática (inglês)}}\\
+    \textbf {Universidade da Corunha}\\
+    \hspace* {6pt} \textcolor{gray}{\textit{Setembro 2020 - Junho 2026}} \\ [4pt]
+    Materias relevantes: Matemática Discreta, Algoritmos, Teoria da Computaçom, Aprendizagem Automática, Desenvolvemento de Sistemas Inteligentes,  Processamento de Linguagens.
+  \end {minipage}
+  \hfill
+  \begin {minipage} [t] {200pt}
+    \href {https://itg.es/} {\textbf {Desenvolvemento Software (full-stack)}}\\
+    \textbf {Instituto Tecnológico de Galicia}\\
+    \hspace* {6pt} \textcolor{gray}{\textit{Setembro 2023 - Junho 2024}} \\ [4pt]
+    Trabalho colaborativo no desenvolvemento de umha ferramenta de autenticaçom e de umha aplicaçom de visualizaçom de dados, empregando JavaScript, Java e Angular
+  \end {minipage}
+\end {minipage}
+\end {flushright}
 
-  \begin {flushright}
-  \begin {minipage} [t] {\rightcolumwidth\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%% PROJECTOS %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
 
-    \begin{minipage}[c]{400pt}
-      \href {https://github.com/yref-boop/ai-bias} {\textbf {Análise de biés em LLMs perante linguagem nom binária}}
+\sectiontitle {projetos}
+\vspace{-15pt}
+
+\begin {flushright}
+\begin {minipage} [t] {\rightcolumwidth\textwidth}
+
+  \href {https://github.com/yref-boop/ai-bias} {\textbf {LLM evaluation in regards to gender diversity and non-binary Galician language}}
+  \hfill
+  \vspace{1pt}
+  \hrule
+  \vspace {4pt} Projeto de fim de grau: trabalho de investigaçom no campo da socio-tecnologia que analisa o comportamento de LLMs comerciais ante a linguagem nom binária galega.
+  \vspace{5pt}
+
+  Também gosto de fazer pequenos projetos para testar ferramentas ou linguagens novas:
+  \vspace{5pt}
+
+  \begin {minipage} [t] {0.3\textwidth}
+    \begin{minipage}[c]{100pt}
+      \href {https://github.com/yref-boop/dotfiles} {\textbf {Dotfiles}}
     \end{minipage}
-    \hfill
+      \hfill
     \begin{minipage}[c]{8pt}
-      \fontsize {8 pt}{8 pt}{\color{gray}\simpleicon{julia}}
+      \fontsize {8 pt}{8 pt}{\color{gray}\simpleicon{nixos}}
     \end{minipage}
-    \vspace{1px}
+    \vspace{1pt}
     \hrule
-    \vspace {4px} Trabalho de investigaçom no campo da socio-tecnologia que busca analisar o comportamento de LLMs comerciais ante a linguagem nom binária, e empregar os achados para propor um modelo que nom apresente tais biés.
-    \vspace{5px}
-
-    Também gosto de fazer pequenos projetos para testar ferramentas ou linguagens novas:
-    \vspace{5px}
-
-    \begin {minipage} [t] {0.3\textwidth}
-      \begin{minipage}[c]{100pt}
-        \href {https://github.com/yref-boop/dotfiles} {\textbf {Dotfiles}}
-      \end{minipage}
-      \hfill
-      \begin{minipage}[c]{8pt}
-        \fontsize {8 pt}{8 pt}{\color{gray}\simpleicon{nixos}}
-      \end{minipage}
-      \vspace{1px}
-      \hrule
-      \vspace {4px} Arquivos de configuraçom dos meus sistemas NixOS.
-    \end {minipage}
-    \hfill
-    \begin {minipage} [t] {0.3\textwidth}
-      \begin{minipage}[c]{100pt}
-        \href {https://github.com/yref-boop/ann} {\textbf {Rede neuronal}}
-      \end{minipage}
-      \hfill
-      \begin{minipage}[c]{9pt}
-      \vspace{1px}
-        \fontsize {9 pt}{9 pt}{\color{gray}\simpleicon{haskell}}
-      \end{minipage}
-      \vspace{1px}
-      \hrule
-      \vspace {4px} Implementaçom de umha ANN do zero.
-    \end {minipage}
-    \hfill
-    \begin {minipage} [t] {0.3\textwidth}
-      \begin{minipage}[c]{100pt}
-        \href {https://github.com/yref-boop/rego} {\textbf {Site web}}
-      \end{minipage}
-      \hfill
-      \begin{minipage}[c]{8pt}
-      \vspace{1px}
-        \fontsize {8 pt}{8 pt}{\color{gray}\simpleicon{gleam}}
-      \end{minipage}
-      \vspace{1px}
-      \hrule
-      \vspace {4px} Desenho e desenvolvemento do site web \href{http://rego.gal}{\underline{rego.gal}}.
-    \end {minipage}
-
-    %\vspace{8px}
-    %\begin{minipage}[c]{400pt}
-    %  \href {https://github.com/yref-boop/ann} {\textbf {Anâlise dos nesgos na IA gerativa fronte à linguagem queer}}
-    %\end{minipage}
-    %\hfill
-    %\begin{minipage}[c]{9pt}
-    %  \fontsize {9 pt}{9 pt}{\color{gray}\simpleicon{gleam}}
-    %\end{minipage}
-    %\vspace{2px}
-    %\hrule
+    \vspace {4pt} Configuraçons dos meus sistemas NixOS.
   \end {minipage}
-  \end {flushright}
-
-
-
-  %%%%%%% INTERESSES %%%%%%%
-
-  \sectiontitle {Interesses}
-  \vspace{-15px}
-
-  \begin {flushright}
-  \begin {minipage} [t] {\rightcolumwidth\textwidth}
-      Sou uma pessoa moito curiosa, sempre aberta a investigar e aprender algo novo. Sendo a ciência da computaçom o meu foco principal, moitos dos meus interesses pessoais ficam nesse âmbito:
-
-      \vspace {-8px}
-      \begin{multicols}{3}
-      \begin {itemize} [noitemsep]
-        \item Sócio-Tecnologia
-        \item Programaçom Funcional
-        \item Inteligência Artificial
-        \item Avances Académicos
-        \item FOSS
-        \item Redes distribuidas
-      \end {itemize}
-      \end{multicols}
-
-      \vspace{-5px}
-      Entre as outras áreas do conhecemento nas que tenho interesse estám principalmente:
-
-      \vspace{-8px}
-      \begin{multicols}{5}
-      \begin {itemize} [noitemsep]
-        \item Sociologia
-        \item Linguística
-        \item Mobilidade
-        \item Urbanismo
-        \item Desenho
-      \end {itemize}
-      \end{multicols}
-
+  \hfill
+  \begin {minipage} [t] {0.3\textwidth}
+    \begin{minipage}[c]{100pt}
+      \href {https://github.com/yref-boop/ann} {\textbf {Rede neuronal}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{9pt}
+      \vspace{1pt}
+      \fontsize {9 pt}{9 pt}{\color{gray}\simpleicon{haskell}}
+    \end{minipage}
+    \vspace{1pt}
+    \hrule
+    \vspace {4pt} Implementaçom de umha ANN do zero.
   \end {minipage}
-  \end {flushright}
+  \hfill
+  \begin {minipage} [t] {0.3\textwidth}
+    \begin{minipage}[c]{100pt}
+      \href {https://github.com/yref-boop/ann} {\textbf {Site web}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{9pt}
+      \vspace{1pt}
+      \fontsize {9 pt}{9 pt}{\color{gray}\simpleicon{gleam}}
+    \end{minipage}
+    \vspace{1pt}
+    \hrule
+    \vspace {4pt} Desenho e desenvolvemento do site web \href{rego.gal}{\underline{rego.gal}}.
+  \end {minipage}
+\end {minipage}
+\end {flushright}
 
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%% INTERESSES %%%%%
+%%%%%%%%%%%%%%%%%%%%%%
 
-  %%%%%%% COMPETÊNCIAS %%%%%%%
-  \sectiontitle {aptidons}
-  \vspace{-15px}
+\sectiontitle {Interesses}
+\vspace{-15pt}
 
-  % section contents
-  \begin {flushright}
-  \begin {minipage} [t] {\rightcolumwidth\textwidth}
+\begin {flushright}
+\begin {minipage} [t] {\rightcolumwidth\textwidth}
+  Sou uma pessoa moito curiosa, sempre aberta a investigar e aprender algo novo. Sendo a ciência da computaçom o meu foco principal, moitos dos meus interesses pessoais ficam nesse âmbito:
 
-    \vspace {-8px}
+  \vspace {-8pt}
+  \begin{multicols}{3}
     \begin {itemize} [noitemsep]
-      \item Ferramentas: JetBrains Suite, Neovim, Git, Bash, LaTeX, Nix, Inkscape.
-      \item Linguaxes de programación: C, Haskell, Ocaml, Python, Java, Gleam, Julia.
+      \item Sócio-Tecnologia
+      \item Programaçom Funcional
+      \item Inteligência Artificial
+      \item Avances Académicos
+      \item FOSS
+      \item Redes distribuida
     \end {itemize}
+  \end{multicols}
 
-      \textbf {Soft Skills} \\ [4px]
-      Ademais do meu stack técnico, traio conmigo as seguintes habilidades interpersoais:
-      \vspace {-8px}
-      \begin{multicols}{3}
-      \begin {itemize} [noitemsep]
-        \item Adaptabilidade
-        \item Colaboraçom
-        \item Trabalho em equipe
-        \item Resolución de problemas
-        \item Independença
-        \item Curiosidade
-      \end {itemize}
-      \end{multicols}
+  \vspace{-5pt}
+  Também defendo a inter-disciplinidade como jeito de enriquecer qualquer área do conhecemento, tendo interesse pessoal por:
 
-      \textbf{Línguas}: \underline{Espanhol}, \underline{Galego-português}: nativo, \underline{Inglês}: C1 (Cambridge), \underline{Francês}: B1 (DELF)
+  \vspace{-8pt}
+  \begin{multicols}{5}
+    \begin {itemize} [noitemsep]
+      \item Sociologia
+      \item Linguística
+      \item Mobilidade
+      \item Urbanismo
+      \item Desenho
+    \end {itemize}
+  \end{multicols}
 
-  \end {minipage}
-  \end {flushright}
+\end {minipage}
+\end {flushright}
 
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% APTIDONS %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+\sectiontitle {aptidons}
+\vspace{-15pt}
+
+\begin {flushright}
+\begin {minipage} [t] {\rightcolumwidth\textwidth}
+
+  \vspace {-8pt}
+  \begin {itemize} [noitemsep]
+    \item Ferramentas: JetBrains Suite, Neovim, Git, Bash, LaTeX, Nix, Inkscape.
+    \item Linguagens de programaçom: C, Haskell, Ocaml, Python, Java, Gleam, Julia.
+  \end {itemize}
+
+  \textbf {Soft Skills} \\ [4pt]
+  Para além do meu stack técnico, traio comigo as seguintes habilidades interpessoais:
+  \vspace {-8pt}
+  \begin{multicols}{3}
+    \begin {itemize} [noitemsep]
+      \item Adaptabilidade
+      \item Colaboraçom
+      \item Trabalho em equipe
+      \item Resolución de problemas
+      \item Independença
+      \item Curiosidade
+    \end {itemize}
+  \end{multicols}
+
+  \textbf{Línguas}: Espanhol \& Galego-português: \textcolor{gray}{\textit{nativo}}, Inglês: \textcolor{gray}{\textit{C1 (Cambridge)}}, Francês: \textcolor{gray}{\textit{B1 (DELF)}}
+
+\end {minipage}
+\end {flushright}
 
 \end{document}
